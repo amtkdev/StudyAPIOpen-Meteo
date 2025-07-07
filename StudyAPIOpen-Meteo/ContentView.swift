@@ -39,10 +39,12 @@ struct ContentView: View {
             if let temperature = viewModel.temperature {
                 Text("Temperature: \(temperature.roundDouble())°C")
                     .font(.title2)
+                    .fontWeight(.ultraLight)
             }
             if let windSpeed = viewModel.windSpeed {
-                Text("Wind Speed: \(windSpeed.roundDouble())km/h")
+                Text("Wind Speed: \(windSpeed.roundDouble()) km/h")
                     .font(.title2)
+                    .fontWeight(.ultraLight)
             }
         }
     }

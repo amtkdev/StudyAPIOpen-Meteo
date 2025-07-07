@@ -7,11 +7,11 @@
 
 import SwiftUI
 //codable is available from the json
-struct WeatherData: Codable {
+struct WeatherData: Decodable {
     let current: CurrentWeather
 }
 
-struct CurrentWeather: Codable {
+struct CurrentWeather: Decodable {
     let temperature_2m: Double
     let wind_speed_10m: Double
 }
@@ -25,25 +25,29 @@ struct ContentView: View {
             VStack {
                 Text("Current Weather")
                     .font(.largeTitle)
+                    .fontWeight(.thin)
                     .padding()
                 
                 if let temperature = temperature {
-                    Text("Temperature: \(temperature) C")
+                    Text("Temperature: \(temperature.roundDouble()) C")
                         .font(.title2)
+                        .fontWeight(.ultraLight)
                 }
                 if let windSpeed = windSpeed {
-                    Text("Wind Speed \(windSpeed) km/h")
+                    Text("Wind Speed \(windSpeed.roundDouble()) km/h")
+                        .font(.title2)
+                        .fontWeight(.ultraLight)
                 }
             }
             .padding()
             .task {
-                await fetchWeather()
+                await fetchWeatherFromAPI()
             }
             .navigationTitle("Weather")
         }
     }
     
-    func fetchWeather() async {
+    func fetchWeatherFromAPI() async {
         let urlString = "https://api.open-meteo.com/v1/forecast?latitude=34.62&longitude=136.50&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m"
         guard let url = URL(string: urlString) else { return }
         

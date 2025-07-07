@@ -1,0 +1,24 @@
+{
+  "originHash" : "0d83138d976caaca28cadec416417a380d4a4a1eb88e72e1aef19ce1cdb5e6e8",
+  "pins" : [
+    {
+      "identity" : "flatbuffers",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/flatbuffers.git",
+      "state" : {
+        "revision" : "1c514626e83c20fffa8557e75641848e1e15cd5e",
+        "version" : "25.2.10"
+      }
+    },
+    {
+      "identity" : "sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/open-meteo/sdk.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "faa1a3ac1d0ffa5292d949f8ad6f26f4a7d5603c"
+      }
+    }
+  ],
+  "version" : 3
+}

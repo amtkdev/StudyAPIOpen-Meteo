@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F869A91B2E1B6689005E6F7C /* OpenMeteoSdk in Frameworks */ = {isa = PBXBuildFile; productRef = F869A91A2E1B6689005E6F7C /* OpenMeteoSdk */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		F869A8D32E127915005E6F7C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F869A91B2E1B6689005E6F7C /* OpenMeteoSdk in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,7 @@
 			);
 			name = "StudyAPIOpen-Meteo";
 			packageProductDependencies = (
+				F869A91A2E1B6689005E6F7C /* OpenMeteoSdk */,
 			);
 			productName = "StudyAPIOpen-Meteo";
 			productReference = F869A8C22E127913005E6F7C /* StudyAPIOpen-Meteo.app */;
@@ -195,6 +201,9 @@
 			);
 			mainGroup = F869A8B92E127913005E6F7C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F869A9192E1B6689005E6F7C /* XCRemoteSwiftPackageReference "sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F869A8C32E127913005E6F7C /* Products */;
 			projectDirPath = "";
@@ -558,6 +567,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F869A9192E1B6689005E6F7C /* XCRemoteSwiftPackageReference "sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/open-meteo/sdk.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F869A91A2E1B6689005E6F7C /* OpenMeteoSdk */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F869A9192E1B6689005E6F7C /* XCRemoteSwiftPackageReference "sdk" */;
+			productName = OpenMeteoSdk;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F869A8BA2E127913005E6F7C /* Project object */;
 }

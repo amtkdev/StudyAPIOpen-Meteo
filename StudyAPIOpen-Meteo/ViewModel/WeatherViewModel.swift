@@ -45,19 +45,15 @@ class WeatherViewModel: ObservableObject {
             // 5. Decode JSON
             let decodedData = try JSONDecoder().decode(WeatherData.self, from: data)
             
-            // 6. Update state on main thread
-            DispatchQueue.main.async {
-                self.currentWeather = decodedData.current
-                self.currentUnits = decodedData.current_units
-                self.isLoading = false
-            }
+            // 6. Update state on main thread but need to insert @Published properties on main thread
+            currentWeather = decodedData.current
+            currentUnits = decodedData.current_units
+            isLoading = false
         } catch {
             // 7. errors
-            DispatchQueue.main.async {
-                self.errorMessage = "Failed to decode weather data: \(error.localizedDescription)"
-                self.isLoading = false
-                print("Decoding error details: \(error)")
-            }
+            errorMessage = "Failed to decode weather data: \(error.localizedDescription)"
+            isLoading = false
+            print("Decoding error details: \(error)")
         }
     }
 }
